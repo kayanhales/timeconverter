@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Time Converter</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Resources</a>
+</div>
+
+<div class="content">
+  <h2>Time Converter</h2>
+  <p>Converts months, days, hours, mins and secs.</p>
+  <p>
+    <form>
+      <label for="timeToConvert">Enter time to convert:</label><br>
+        <input type="number" id="timeToConvert" name="timeToConvert" placeholder="121"><br>
+      <label for="convertTo">What do you want to convert from & to?:</label><br>
+       <select id="convertTo" name="convertTo">
+          <option value="minsToDays">Convert minutes to days, hours and minutes</option>
+          <option value="daysToMonths">Convert days to months, weeks and days</option>
+          <option value="hoursToWeeks">Convert hours to weeks, days and hours</option>
+          <option value="secsToHours">Convert seconds to hours, minutes and seconds</option>
+          <option value="monthsToDecs">Convert months to decades, years and months</option>
+        </select><br>
+      
+       <input type="submit" value="Convert" onclick="return timeConverterMain();"><input type="reset" value="Reset" onclick="document.querySelector('#result').textContent = '';">
+    </form>
+  </p>
+  
+  <p>
+  <div id="result"></div>
+  </p>
+</div>
+
+<div class="footer">
+  <p>Copyright Kayan Clarke</p>
+</div>
+
+</body>
+</html>
