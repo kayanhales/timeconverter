@@ -36,6 +36,11 @@
             console.log(converted);
             document.querySelector('#result').textContent = converted;
             break;
+          case "weeksToYears":
+            converted = convertWeeksToYears(convertMe);
+            console.log(converted);
+            document.querySelector('#result').textContent = converted;
+            break;
           default:
             console.log("Did you enter a day, hour, minute, or second?");
         }
@@ -54,11 +59,11 @@
       //console.log(convertMins(121));
       
       //Convert days to months, weeks and days
-      function convertDaystoMonths(b){
-        var months = Math.floor(b/30);//30 days in a month
-        var weeks = Math.floor((b%30)/7); //7 days in a week
-        var days = b-((months*30)+(weeks*7)); //remainder
-        return b + " days(s) = " +months+ " month(s), " +weeks + ' week(s) and ' + days + " day(s).";  
+      function convertDaystoMonths(a){
+        var months = Math.floor(a/30);//30 days in a month
+        var weeks = Math.floor((a%30)/7); //7 days in a week
+        var days = a-((months*30)+(weeks*7)); //remainder
+        return a + " days(s) = " +months+ " month(s), " +weeks + ' week(s) and ' + days + " day(s).";  
       }
       
       //console.log(convertDays(99));
@@ -91,3 +96,11 @@
         var months = f-((decades*120)+(years*12)); //remainder
         return f + " month(s) = " +decades+ " decade(s), " +years+ " year(s) and " +months+ " month(s).";
       }
+
+      //Convert weeks to years, months, weeks
+      function convertWeeksToYears(f){
+        var years = Math.floor(f/52); //52 weeks in a year
+        var months = Math.floor((f%52)/4);//4 weeks in a month
+        var weeks = f-((years*52)+(months*4)); //remainder
+        return f + " weeks(s) = " +years+ " year(s), " +months+ " month(s) and " +weeks+ " week(s).";
+      }      
